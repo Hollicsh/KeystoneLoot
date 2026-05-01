@@ -53,6 +53,7 @@ modules/query.lua
 modules/favorites.lua
 modules/upgrade.lua
 modules/keystone.lua
+modules/voidcore.lua
 
 # UI
 ui/keystone_tooltip.lua
