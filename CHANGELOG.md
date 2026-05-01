@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.0 - 2026-05-01
+
+### New Features
+
+- Added bonus roll tracking for Voidcore items
+
 ## 2.3.0 - 2026-04-30
 
 ### New Features
