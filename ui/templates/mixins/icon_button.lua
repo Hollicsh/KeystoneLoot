@@ -15,6 +15,13 @@ local STAT_HIGHLIGHT_KEYS = {
     [3] = "versatility"
 };
 
+local SECONDARY_STAT_NAMES = {
+    [ITEM_MOD_CRIT_RATING_SHORT] = true,
+    [ITEM_MOD_HASTE_RATING_SHORT] = true,
+    [ITEM_MOD_MASTERY_RATING_SHORT] = true,
+    [ITEM_MOD_VERSATILITY] = true
+};
+
 local function GenerateContextMenu(Button, rootDescription, specId, sourceId, currentTier)
     local itemId = Button.itemId;
 
@@ -136,6 +143,69 @@ local function AddSpecLinesToTooltip(itemId)
     GameTooltip:AddLine("|A:quest-important-available:16:16:0:0|a " .. line, nil, nil, nil, true);
 end
 
+local function GetSecondaryStatName(text)
+    local statName = string.match(text or "", "^%+[%d%.,]+ (.+)$");
+
+    return statName and SECONDARY_STAT_NAMES[statName] and statName or nil;
+end
+
+local function GetBaseItemStatLines(itemId)
+    local baseItemId = Upgrade:GetBaseItemId(itemId);
+    if (not baseItemId) then
+        return nil;
+    end
+
+    if (not C_Item.IsItemDataCachedByID(baseItemId)) then
+        C_Item.RequestLoadItemDataByID(baseItemId);
+        return nil;
+    end
+
+    local data = C_TooltipInfo.GetHyperlink(Upgrade:BuildItemLink(baseItemId));
+    if (not data) then
+        return nil;
+    end
+
+    local statLines = {};
+    for _, lineData in ipairs(data.lines) do
+        if (GetSecondaryStatName(lineData.leftText)) then
+            table.insert(statLines, lineData.leftText);
+        end
+    end
+
+    return #statLines > 0 and statLines or nil;
+end
+
+local function SetCatalystTooltip(itemId, itemLink)
+    local statLines = GetBaseItemStatLines(itemId);
+    local Info = CreateBaseTooltipInfo("GetHyperlink", itemLink);
+    local index = 0;
+
+    Info.linePreCall = function(tooltip, lineData)
+        if (not GetSecondaryStatName(lineData.leftText)) then
+            return;
+        end
+
+        index = index + 1;
+
+        if (not statLines) then
+            if (index > 1) then
+                return true;
+            end
+
+            lineData.leftText = L["+Secondary stats of the base item"];
+            return;
+        end
+
+        if (not statLines[index]) then
+            return true;
+        end
+
+        lineData.leftText = statLines[index];
+    end;
+
+    GameTooltip:ProcessInfo(Info);
+end
+
 KeystoneLootLootIconButtonMixin = {};
 
 function KeystoneLootLootIconButtonMixin:Init(item)
@@ -248,8 +318,16 @@ function KeystoneLootLootIconButtonMixin:OnEnter()
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT", 0, 12);
     end
 
+    local itemLink = Upgrade:BuildItemLink(self.itemId);
+
     GameTooltip.KeystoneLootOwned = true;
-    GameTooltip:SetHyperlink(Upgrade:BuildItemLink(self.itemId));
+
+    if (KeystoneLoot.CatalystDatabase[self.itemId]) then
+        SetCatalystTooltip(self.itemId, itemLink);
+    else
+        GameTooltip:SetHyperlink(itemLink);
+    end
+
     AddSpecLinesToTooltip(self.itemId);
     GameTooltip:Show();
 

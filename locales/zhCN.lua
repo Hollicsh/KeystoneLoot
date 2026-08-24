@@ -78,6 +78,7 @@ L["Nice to have"] = "锦上添花";
 L["Must have"] = "必须获取";
 L["Best in Slot"] = "最佳装备";
 L["Catalyst"] = "化生台";
+L["+Secondary stats of the base item"] = "+基础物品的副属性";
 
 -- loot_reminder_frame.lua
 L["Correct loot specialization set?"] = "拾取专精是否正确？";

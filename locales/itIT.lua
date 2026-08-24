@@ -77,6 +77,7 @@ L["Set Favorite"] = "Imposta preferito";
 L["Nice to have"] = "Utile averlo";
 L["Must have"] = "Indispensabile";
 L["Catalyst"] = "Catalizzatore";
+L["+Secondary stats of the base item"] = "+Statistiche secondarie dell'oggetto base";
 
 -- loot_reminder_frame.lua
 L["Correct loot specialization set?"] = "Specializzazione bottino corretta?";

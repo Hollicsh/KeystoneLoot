@@ -31,6 +31,21 @@ local BLACKLIST_ITEMS = {
     [268280] = true
 };
 
+local function GetTargetSpecId()
+    local slotId = DB:Get("filters.slotId");
+    local specId = DB:Get("filters.specId");
+
+    if (slotId == -1 and DB:Get("filters.classId") ~= Character:GetCurrentClassId()) then
+        specId = 0;
+    end
+
+    if (specId == 0) then
+        specId = Character:GetCurrentSpecId();
+    end
+
+    return specId;
+end
+
 function Upgrade:IsUpgradeable(itemId)
     local _, _, _, _, _, classId, subClassId = C_Item.GetItemInfoInstant(itemId);
 
@@ -39,6 +54,10 @@ function Upgrade:IsUpgradeable(itemId)
     end
 
     return (classId == Enum.ItemClass.Armor or classId == Enum.ItemClass.Weapon);
+end
+
+function Upgrade:GetBaseItemId(itemId)
+    return Favorites:GetBaseItemId(itemId, GetTargetSpecId());
 end
 
 function Upgrade:GetCurrentTrack()
@@ -75,18 +94,7 @@ function Upgrade:BuildItemLink(itemId)
         return string.format("item:%d", itemId);
     end
 
-    -- Get the correct specId
-    local slotId = DB:Get("filters.slotId");
-    local specId = DB:Get("filters.specId");
-    local classId = Character:GetCurrentClassId();
-
-    if (slotId == -1 and DB:Get("filters.classId") ~= classId) then
-        specId = 0;
-    end
-
-    if (specId == 0) then
-        specId = Character:GetCurrentSpecId();
-    end
+    local specId = GetTargetSpecId();
 
     -- Calculate bonus IDs needed
     local bonusIds = {};

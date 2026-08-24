@@ -79,7 +79,8 @@ A JSON object keyed by **specialization ID as a string**, each mapping to a list
 {
   "250": [
     { "itemId": 178712, "tier": 3, "bonusIds": [6652, 1498] },
-    { "itemId": 178809, "tier": 2 }
+    { "itemId": 178809, "tier": 2 },
+    { "itemId": 271456, "tier": 4, "baseItemId": 178712 }
   ],
   "251": [
     { "itemId": 178712, "tier": 1 }
@@ -98,6 +99,7 @@ Fields per item entry:
 | `bonusIds` | integer[] | no | Bonus IDs applied to the item. |
 | `gems` | integer[] | no | Socketed gem item IDs. |
 | `enchant` | integer | no | Enchant ID. |
+| `baseItemId` | integer | no | For Catalyst items: the item that gets converted. Its secondary stats replace the placeholder values Blizzard shows on the Catalyst item. |
 
 Most BiS-list generators only need `itemId`, `tier`, and (optionally) `bonusIds`; `gems` and `enchant` are extras that the addon simply round-trips.
 
@@ -235,14 +237,15 @@ An entry looks like this:
 
 ```lua
 {
-    itemId   = 178712,
-    specId   = 250,
-    sourceId = 161,             -- challengeModeId, bossId, "catalyst" or "custom"
-    tier     = 3,
-    tierName = "Best in Slot",  -- localized
-    bonusIds = { 6652, 1498 },  -- optional
-    gems     = { 213743 },      -- optional
-    enchant  = 7334,            -- optional
+    itemId     = 178712,
+    specId     = 250,
+    sourceId   = 161,             -- challengeModeId, bossId, "catalyst" or "custom"
+    tier       = 3,
+    tierName   = "Best in Slot",  -- localized
+    bonusIds   = { 6652, 1498 },  -- optional
+    gems       = { 213743 },      -- optional
+    enchant    = 7334,            -- optional
+    baseItemId = 178712,          -- optional, Catalyst items only
 }
 ```
 
@@ -264,7 +267,7 @@ An entry looks like this:
 | `:Import(importString, overwrite, characterKey)` | `success, importedCount or error message, skippedSpecs`. |
 | `:Export(characterKey)` | Import string of that character, or `nil` if there is nothing to export. |
 
-`options` for `:AddFavorite` are all optional: `{ bonusIds = { ... }, gems = { ... }, enchant = 0, characterKey = "..." }`. `tier` defaults to *Must have*.
+`options` for `:AddFavorite` are all optional: `{ bonusIds = { ... }, gems = { ... }, enchant = 0, baseItemId = 0, characterKey = "..." }`. `tier` defaults to *Must have*.
 
 Items are validated exactly like an import: known dungeon, raid, and Catalyst items must be usable by the target class/spec, and unknown items are stored as Custom Items as long as the item really exists. The open window is redrawn automatically after a write.
 

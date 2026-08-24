@@ -79,6 +79,7 @@ L["Must have"] = "Обязательно";
 L["Best in Slot"] = "БиС";
 L["Catalyst"] = "Катализатор";
 L["Voidcore used"] = "Использован сердечник Бездны";
+L["+Secondary stats of the base item"] = "+Вторичные характеристики базового предмета";
 
 -- loot_reminder_frame.lua
 L["Correct loot specialization set?"] = "Правильная установка специализации для добычи?";
