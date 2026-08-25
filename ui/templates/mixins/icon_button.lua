@@ -6,6 +6,7 @@ local Favorites = KeystoneLoot.Favorites;
 local Character = KeystoneLoot.Character;
 local Query = KeystoneLoot.Query;
 local Voidcore = KeystoneLoot.Voidcore;
+local CopyPopup = KeystoneLoot.CopyPopup;
 local L = KeystoneLoot.L;
 
 local STAT_HIGHLIGHT_KEYS = {
@@ -21,6 +22,56 @@ local SECONDARY_STAT_NAMES = {
     [ITEM_MOD_MASTERY_RATING_SHORT] = true,
     [ITEM_MOD_VERSATILITY] = true
 };
+
+local function GetCopyItemIds(itemLink)
+    local enchantId, gem1, gem2, gem3, gem4 = string.match(itemLink, "^item:%d+:(%d*):(%d*):(%d*):(%d*):(%d*)");
+    local itemIds = {};
+
+    local enchantItemId = KeystoneLoot.EnchantDatabase[tonumber(enchantId)];
+    if (enchantItemId) then
+        table.insert(itemIds, enchantItemId);
+    end
+
+    for _, gemId in ipairs({ gem1, gem2, gem3, gem4 }) do
+        if (gemId and gemId ~= "") then
+            table.insert(itemIds, gemId);
+        end
+    end
+
+    return itemIds;
+end
+
+local function PreloadCopyItems(itemLink)
+    for _, copyItemId in ipairs(GetCopyItemIds(itemLink)) do
+        if (not C_Item.IsItemDataCachedByID(copyItemId)) then
+            C_Item.RequestLoadItemDataByID(copyItemId);
+        end
+    end
+end
+
+local function AddCopyEntries(rootDescription, itemId)
+    local names = {};
+
+    for _, copyItemId in ipairs(GetCopyItemIds(Upgrade:BuildItemLink(itemId))) do
+        local name = C_Item.GetItemInfo(copyItemId);
+        if (name) then
+            table.insert(names, name);
+        end
+    end
+
+    if (#names == 0) then
+        return;
+    end
+
+    rootDescription:CreateDivider();
+    rootDescription:CreateTitle(COPY_NAME);
+
+    for _, name in ipairs(names) do
+        rootDescription:CreateButton(name, function()
+            CopyPopup:Show(name);
+        end);
+    end
+end
 
 local function GenerateContextMenu(Button, rootDescription, specId, sourceId, currentTier)
     local itemId = Button.itemId;
@@ -47,7 +98,6 @@ local function GenerateContextMenu(Button, rootDescription, specId, sourceId, cu
     end
 
     if (currentTier > 0) then
-        rootDescription:CreateDivider();
         rootDescription:CreateButton(REMOVE, function()
             Favorites:Remove(itemId, specId);
 
@@ -56,22 +106,22 @@ local function GenerateContextMenu(Button, rootDescription, specId, sourceId, cu
         end);
     end
 
-    if (not Voidcore:IsEligible(itemId)) then
-        return;
+    if (Voidcore:IsEligible(itemId)) then
+        local function IsVoidcoreUsed()
+            return Voidcore:IsUsed(itemId);
+        end
+
+        local function SetVoidcoreUsed()
+            Voidcore:SetUsed(itemId, not Voidcore:IsUsed(itemId));
+            Button:UpdateVoidcoreIcon();
+        end
+
+        rootDescription:CreateDivider();
+        rootDescription:CreateTitle(BONUS_LOOT_LABEL);
+        rootDescription:CreateCheckbox(L["Voidcore used"], IsVoidcoreUsed, SetVoidcoreUsed);
     end
 
-    local function IsVoidcoreUsed()
-        return Voidcore:IsUsed(itemId);
-    end
-
-    local function SetVoidcoreUsed()
-        Voidcore:SetUsed(itemId, not Voidcore:IsUsed(itemId));
-        Button:UpdateVoidcoreIcon();
-    end
-
-    rootDescription:CreateDivider();
-    rootDescription:CreateTitle(BONUS_LOOT_LABEL);
-    rootDescription:CreateCheckbox(L["Voidcore used"], IsVoidcoreUsed, SetVoidcoreUsed);
+    AddCopyEntries(rootDescription, itemId);
 end
 
 local function GetFavoritesSpecId()
@@ -319,6 +369,8 @@ function KeystoneLootLootIconButtonMixin:OnEnter()
     end
 
     local itemLink = Upgrade:BuildItemLink(self.itemId);
+
+    PreloadCopyItems(itemLink);
 
     GameTooltip.KeystoneLootOwned = true;
 

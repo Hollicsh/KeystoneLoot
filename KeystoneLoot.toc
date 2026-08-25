@@ -58,6 +58,7 @@ data/items.lua
 data/dungeons.lua
 data/raids.lua
 data/catalyst.lua
+data/enchants.lua
 data/upgrade_tracks.lua
 data/keystone_mapping.lua
 data/voidcore.lua
@@ -73,6 +74,7 @@ modules/voidcore.lua
 modules/api.lua
 
 # UI
+ui/copy_popup.lua
 ui/keystone_tooltip.lua
 ui/item_tooltip.lua
 ui/favorite_icon.lua

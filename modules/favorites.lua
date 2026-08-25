@@ -246,7 +246,7 @@ local function ParseV3(dataStr)
                         bonusIds   = itemData.bonusIds,
                         gems       = itemData.gems,
                         enchant    = itemData.enchant,
-                        baseItemId = tonumber(itemData.baseItemId),
+                        baseItemId = itemData.baseItemId,
                     });
                 end
             end
