@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.13.1 - 2026-08-27
+
+### Bugfixes
+
+- Catalyst tooltips keep Blizzard's token values and list the catalyst result separately
+
+### Improvements
+
+- Show the favorite icon in EllesmereUI Bags
+- Optional EllesmereUI skin when the addon is installed
+
 ## 2.13.0 - 2026-08-25
 
 ### New Features
