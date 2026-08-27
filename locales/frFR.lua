@@ -26,6 +26,7 @@ L["Minimap button"] = "Bouton de la mini-carte";
 L["Item level in keystone tooltip"] = "Niveau d'objet dans l'infobulle de la clé";
 L["Favorite in item tooltip"] = "Favori dans l'infobulle de l'objet";
 L["Favorite on item icons"] = "Favori sur les icônes d'objet";
+L["Slot name on item icons"] = "Nom de l'emplacement sur les icônes d'objet";
 L['Hide "Other" in All Slots'] = "Masquer « Autre » dans Tous les emplacements";
 L["Loot reminder (dungeons)"] = "Rappel de butin (donjons)";
 L["Highlighting"] = "Surlignage";
@@ -79,6 +80,26 @@ L["Must have"] = "Indispensable";
 L["Catalyst"] = "Catalyseur";
 L["+Secondary stats of the base item"] = "+Statistiques secondaires de l'objet de base";
 L["Tier token"] = "Jeton de palier";
+
+-- icon_button.lua
+L["Head"] = "Tête";
+L["Neck"] = "Cou";
+L["Shoulder"] = "Épaules";
+L["Back"] = "Dos";
+L["Chest"] = "Torse";
+L["Wrist"] = "Poignets";
+L["Hands"] = "Mains";
+L["Waist"] = "Taille";
+L["Legs"] = "Jambes";
+L["Feet"] = "Pieds";
+L["1H"] = "1M";
+L["2H"] = "2M";
+L["Main"] = "Princ.";
+L["Off"] = "Second.";
+L["Shield"] = "Bouclier";
+L["Ranged"] = "Dist.";
+L["Ring"] = "Anneau";
+L["Trinket"] = "Bijou";
 
 -- copy_popup.lua
 L["Press CTRL+C to copy"] = "Appuyez sur CTRL+C pour copier";

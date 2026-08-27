@@ -26,6 +26,7 @@ L["Minimap button"] = "미니맵 버튼";
 L["Item level in keystone tooltip"] = "쐐기돌 툴팁에 장비 수준 표시";
 L["Favorite in item tooltip"] = "아이템 툴팁에 즐겨찾기 표시";
 L["Favorite on item icons"] = "아이템 아이콘에 즐겨찾기 표시";
+L["Slot name on item icons"] = "아이템 아이콘에 착용 부위 표시";
 L['Hide "Other" in All Slots'] = "전체 슬롯에서 \"기타\" 숨기기";
 L["Loot reminder (dungeons)"] = "전리품 리마인더 (던전)";
 L["Highlighting"] = "강조";
@@ -80,6 +81,26 @@ L["Best in Slot"] = "최고 장비";
 L["Catalyst"] = "촉매";
 L["+Secondary stats of the base item"] = "+기본 아이템의 2차 능력치";
 L["Tier token"] = "티어 토큰";
+
+-- icon_button.lua
+L["Head"] = "머리";
+L["Neck"] = "목";
+L["Shoulder"] = "어깨";
+L["Back"] = "등";
+L["Chest"] = "가슴";
+L["Wrist"] = "손목";
+L["Hands"] = "손";
+L["Waist"] = "허리";
+L["Legs"] = "다리";
+L["Feet"] = "발";
+L["1H"] = "한손";
+L["2H"] = "양손";
+L["Main"] = "주장비";
+L["Off"] = "보조";
+L["Shield"] = "방패";
+L["Ranged"] = "원거리";
+L["Ring"] = "반지";
+L["Trinket"] = "장신구";
 
 -- copy_popup.lua
 L["Press CTRL+C to copy"] = "CTRL+C를 눌러 복사";

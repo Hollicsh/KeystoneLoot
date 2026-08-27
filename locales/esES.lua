@@ -26,6 +26,7 @@ L["Minimap button"] = "Botón del minimapa";
 L["Item level in keystone tooltip"] = "Nivel de objeto en la descripción del sigilo";
 L["Favorite in item tooltip"] = "Favorito en la descripción del objeto";
 L["Favorite on item icons"] = "Favorito en los iconos de objeto";
+L["Slot name on item icons"] = "Nombre del espacio en los iconos de objeto";
 L['Hide "Other" in All Slots'] = "Ocultar \"Otro\" en Todos los espacios";
 L["Loot reminder (dungeons)"] = "Recordatorio de botín (mazmorras)";
 L["Highlighting"] = "Resaltar";
@@ -79,6 +80,26 @@ L["Must have"] = "Imprescindible";
 L["Catalyst"] = "Catalizador";
 L["+Secondary stats of the base item"] = "+Estadísticas secundarias del objeto base";
 L["Tier token"] = "Ficha de tier";
+
+-- icon_button.lua
+L["Head"] = "Cabeza";
+L["Neck"] = "Cuello";
+L["Shoulder"] = "Hombros";
+L["Back"] = "Espalda";
+L["Chest"] = "Pecho";
+L["Wrist"] = "Muñecas";
+L["Hands"] = "Manos";
+L["Waist"] = "Cintura";
+L["Legs"] = "Piernas";
+L["Feet"] = "Pies";
+L["1H"] = "1M";
+L["2H"] = "2M";
+L["Main"] = "Princ.";
+L["Off"] = "Secund.";
+L["Shield"] = "Escudo";
+L["Ranged"] = "Dist.";
+L["Ring"] = "Anillo";
+L["Trinket"] = "Abalorio";
 
 -- copy_popup.lua
 L["Press CTRL+C to copy"] = "Pulsa CTRL+C para copiar";

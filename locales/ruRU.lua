@@ -26,6 +26,7 @@ L["Minimap button"] = "Включить кнопку на миникарте";
 L["Item level in keystone tooltip"] = "Показать уровень предметов во всплывающей подсказке ключа";
 L["Favorite in item tooltip"] = "Избранное в подсказке предмета";
 L["Favorite on item icons"] = "Избранное на значках предметов";
+L["Slot name on item icons"] = "Название слота на значках предметов";
 L['Hide "Other" in All Slots'] = "Скрывать \"Прочее\" при показе всех слотов";
 L["Loot reminder (dungeons)"] = "Включить напоминание о добыче";
 L["Highlighting"] = "Подсветка";
@@ -81,6 +82,26 @@ L["Catalyst"] = "Катализатор";
 L["Voidcore used"] = "Использован сердечник Бездны";
 L["+Secondary stats of the base item"] = "+Вторичные характеристики базового предмета";
 L["Tier token"] = "Жетон сета";
+
+-- icon_button.lua
+L["Head"] = "Голова";
+L["Neck"] = "Шея";
+L["Shoulder"] = "Плечи";
+L["Back"] = "Спина";
+L["Chest"] = "Грудь";
+L["Wrist"] = "Запяст.";
+L["Hands"] = "Кисти";
+L["Waist"] = "Пояс";
+L["Legs"] = "Ноги";
+L["Feet"] = "Ступни";
+L["1H"] = "1Р";
+L["2H"] = "2Р";
+L["Main"] = "Прав.";
+L["Off"] = "Лев.";
+L["Shield"] = "Щит";
+L["Ranged"] = "Дальн.";
+L["Ring"] = "Кольцо";
+L["Trinket"] = "Аксесс.";
 
 -- copy_popup.lua
 L["Press CTRL+C to copy"] = "Нажмите CTRL+C, чтобы скопировать";

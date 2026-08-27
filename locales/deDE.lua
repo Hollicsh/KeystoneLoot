@@ -29,6 +29,7 @@ L["Minimap button"] = "Minimap-Button";
 L["Item level in keystone tooltip"] = "Gegenstandsstufe im Schlüsselstein-Tooltip";
 L["Favorite in item tooltip"] = "Favorit im Gegenstand-Tooltip";
 L["Favorite on item icons"] = "Favorit auf Gegenstand-Icons";
+L["Slot name on item icons"] = "Slot-Name auf Gegenstand-Icons";
 L['Hide "Other" in All Slots'] = "\"Sonstiges\" in Alle Slots ausblenden";
 L["Loot reminder (dungeons)"] = "Beute-Erinnerung (Dungeons)";
 L["Highlighting"] = "Hervorhebungen";
@@ -83,6 +84,26 @@ L["Catalyst"] = "Katalysator";
 L["Voidcore used"] = "Leerenkern benutzt";
 L["+Secondary stats of the base item"] = "+Sekundärwerte des Basis-Gegenstands";
 L["Tier token"] = "Tier-Token";
+
+-- icon_button.lua
+L["Head"] = "Kopf";
+L["Neck"] = "Hals";
+L["Shoulder"] = "Schulter";
+L["Back"] = "Rücken";
+L["Chest"] = "Brust";
+L["Wrist"] = "Handgel.";
+L["Hands"] = "Hände";
+L["Waist"] = "Taille";
+L["Legs"] = "Beine";
+L["Feet"] = "Füße";
+L["1H"] = "1H";
+L["2H"] = "2H";
+L["Main"] = "MH";
+L["Off"] = "OH";
+L["Shield"] = "Schild";
+L["Ranged"] = "Fern";
+L["Ring"] = "Ring";
+L["Trinket"] = "Schmuck";
 
 -- copy_popup.lua
 L["Press CTRL+C to copy"] = "STRG+C zum Kopieren";
