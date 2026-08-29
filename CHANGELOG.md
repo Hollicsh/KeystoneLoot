@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.14.0 - 2026-08-29
+
+### New Features
+
+- Show the equipment slot on item icons, can be turned off in the settings
+
+### Other Changes
+
+- Update data
+
 ## 2.13.1 - 2026-08-27
 
 ### Bugfixes
