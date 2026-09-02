@@ -298,7 +298,7 @@ EventUtil.ContinueOnAddOnLoaded("Baganator", function()
 
             return Texture;
         end,
-        { corner = "top_left", priority = 1 }
+        { corner = "bottom_left", priority = 1 }
     );
 end);
 
