@@ -8,7 +8,7 @@ local L = KeystoneLoot.L;
 
 -- keystoneloot_frame.lua
 L["%s (%s Season %d)"] = "%s (%s сезон %d)";
-L["Import BIS items from %s"] = "Импортируйте БиС-предметы с %s";
+L["Import BIS items from %s"] = "Импортировать БиС-предметы из %s";
 
 -- itemlevel_dropdown.lua
 L["Veteran"] = "Ветеран";
@@ -22,7 +22,7 @@ L["Myth"] = "Легенда";
 L["The Catalyst"] = "Катализатор";
 
 -- settings_dropdown.lua
-L["Minimap button"] = "Включить кнопку на миникарте";
+L["Minimap button"] = "Включить иконку на миникарте";
 L["Item level in keystone tooltip"] = "Показать уровень предметов во всплывающей подсказке ключа";
 L["Favorite in item tooltip"] = "Избранное в подсказке предмета";
 L["Favorite on item icons"] = "Избранное на значках предметов";
@@ -51,11 +51,11 @@ L["Delete all data for %s?"] = "Удалить все данные для %s?";
 L["Cannot delete the currently logged in character."] = "Невозможно удалить персонажа, под которым выполнен вход.";
 L["This character is hidden."] = "Этот персонаж скрыт.";
 L["Wide mode"] = "Широкий режим";
-L["Drop notification (favorites)"] = "Уведомление о дропе (избранное)";
+L["Drop notification (favorites)"] = "Уведомление о выпадении (избранное)";
 L["Reminds you on dungeon entry if your loot spec doesn't match your favorites, or if switching it could increase your chances of getting them."] = "Напоминает при входе в подземелье, если Ваша специализация добычи не соответствует избранному или смена специализации может повысить шанс получить нужные предметы.";
 L["Shows a notification when another player loots an item you have marked as a favorite."] = "Показывает уведомление, когда другой игрок получает предмет, отмеченный Вами как избранный.";
 L["Mythic+ notification (dungeons)"] = "Уведомление М+ (подземелья)";
-L["Shows the dungeon and your role with a teleport button when you join a Mythic+ group or the group becomes full."] = "Показывает подземелье и вашу роль с кнопкой телепортации, когда вы вступаете в группу М+ или группа заполняется.";
+L["Shows the dungeon and your role with a teleport button when you join a Mythic+ group or the group becomes full."] = "Показывает подземелье и Вашу роль с кнопкой телепортации, когда Вы вступаете в группу М+ или группа заполняется.";
 L["Whisper message..."] = "Сообщение в шёпот...";
 L["Whisper message\n{item} will be replaced with the item link."] = "Сообщение в шёпот\n{item} будет заменено ссылкой на предмет.";
 L["Multiple slot filtering"] = "Фильтрация нескольких слотов";
