@@ -104,6 +104,10 @@ ui/drop_notification_frame/mixins/whisper_button.lua
 ui/drop_notification_frame/mixins/drop_notification_frame.lua
 ui/drop_notification_frame/drop_notification_frame.xml
 
+ui/mythicplus_notification_frame/mixins/card_button.lua
+ui/mythicplus_notification_frame/mixins/mythicplus_notification_frame.lua
+ui/mythicplus_notification_frame/mythicplus_notification_frame.xml
+
 ui/catalyst_frame/mixins/catalyst_frame.lua
 ui/catalyst_frame/mixins/catalyst_icon.lua
 ui/catalyst_frame/catalyst_frame.xml

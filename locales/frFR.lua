@@ -51,9 +51,11 @@ L["Delete all data for %s?"] = "Supprimer toutes les données de %s ?";
 L["Cannot delete the currently logged in character."] = "Impossible de supprimer le personnage actuellement connecté.";
 L["This character is hidden."] = "Ce personnage est masqué.";
 L["Wide mode"] = "Mode large";
-L["Drop alert (favorites)"] = "Alerte de butin (favoris)";
+L["Drop notification (favorites)"] = "Alerte de butin (favoris)";
 L["Reminds you on dungeon entry if your loot spec doesn't match your favorites, or if switching it could increase your chances of getting them."] = "Vous rappelle à l'entrée d'un donjon si votre spécialisation de butin ne correspond pas à vos favoris ou si en changer pourrait augmenter vos chances de les obtenir.";
 L["Shows a notification when another player loots an item you have marked as a favorite."] = "Affiche une notification lorsqu'un autre joueur récupère un objet que vous avez marqué comme favori.";
+L["Mythic+ notification (dungeons)"] = "Notification Mythique+ (donjons)";
+L["Shows the dungeon and your role with a teleport button when you join a Mythic+ group or the group becomes full."] = "Affiche le donjon et votre rôle avec un bouton de téléportation lorsque vous rejoignez un groupe Mythique+ ou que le groupe est complet.";
 L["Whisper message..."] = "Message chuchoté...";
 L["Whisper message\n{item} will be replaced with the item link."] = "Message chuchoté\n{item} sera remplacé par le lien de l'objet.";
 L["Multiple slot filtering"] = "Filtrage de plusieurs emplacements";
@@ -64,7 +66,7 @@ L["Automatically responds with your current Mythic+ keystone when someone types 
 
 -- custom_item_icon.lua
 L["Custom Items"] = "Objets personnalisés";
-L["Import items from external sources like www.keystoneloot.io"] = "Objets importés depuis des sources externes comme www.keystoneloot.io";
+L["Import items from external sources like keystoneloot.io"] = "Objets importés depuis des sources externes comme keystoneloot.io";
 
 -- favorites.lua
 L["No favorites found"] = "Aucun favori trouvé";
@@ -115,6 +117,10 @@ L["Left click: Open overview"] = "Clic gauche : Ouvrir l'aperçu";
 
 -- drop_notification_frame.lua
 L["Favorite dropped!"] = "Favori obtenu !";
+
+-- mythicplus_notification_frame.lua
+L["Mythic+ group joined!"] = "Groupe Mythique+ rejoint !";
+L["Group is full!"] = "Groupe complet !";
 
 -- whisper_button.lua
 L["Text can be modified in the settings."] = "Le texte peut être modifié dans les paramètres.";
