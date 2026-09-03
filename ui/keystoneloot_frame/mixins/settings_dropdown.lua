@@ -74,6 +74,20 @@ StaticPopupDialogs.KEYSTONELOOT_DELETE_CHARACTER = {
     hideOnEscape = true
 };
 
+StaticPopupDialogs.KEYSTONELOOT_RESET_CHARACTER = {
+    text = L["Reset all favorites of %s?"],
+    button1 = RESET,
+    button2 = CANCEL,
+    OnAccept = function(self, data)
+        if (Favorites:Reset(data.key)) then
+            KeystoneLoot.APIInternal.RefreshUI();
+        end
+    end,
+    timeout = 0,
+    exclusive = true,
+    whileDead = true,
+    hideOnEscape = true
+};
 
 StaticPopupDialogs.KEYSTONELOOT_EXPORT = {
     text = L["Export favorites of %s"],
@@ -268,6 +282,10 @@ function KeystoneLootSettingsDropdownMixin:Init()
                     end
                 end
             );
+
+            charSubmenu:CreateButton(L["Reset..."], function()
+                StaticPopup_Show("KEYSTONELOOT_RESET_CHARACTER", GetColoredCharacterLabel(data), nil, data);
+            end);
 
             local deleteButton = charSubmenu:CreateButton(L["Delete..."], function()
                 StaticPopup_Show("KEYSTONELOOT_DELETE_CHARACTER", GetColoredCharacterLabel(data), nil, data);

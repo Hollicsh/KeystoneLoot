@@ -470,6 +470,22 @@ function Favorites:Remove(itemId, specId, characterKey)
     return removed;
 end
 
+function Favorites:Reset(characterKey)
+    characterKey = characterKey or Character:GetSelectedKey();
+    local favorites = DB:Get("favorites");
+
+    if (not favorites or not favorites[characterKey]) then
+        return false;
+    end
+
+    favorites[characterKey] = {};
+    DB:Set("favorites", favorites);
+
+    FireEvent("FAVORITES_CHANGED", characterKey);
+
+    return true;
+end
+
 function Favorites:GetTier(itemId, specId)
     if (not itemId) then
         return 0;
