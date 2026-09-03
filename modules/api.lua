@@ -179,6 +179,10 @@ function Internal.SetReady()
     Dispatch(API.Event.READY);
 end
 
+function Internal.RefreshUI()
+    RefreshUI();
+end
+
 function Internal.Fire(event, ...)
     Dispatch(event, ...);
 
@@ -633,7 +637,7 @@ function API:Export(characterKey)
     return exportString;
 end
 
--- Returns: success, importedCount or error message, skippedSpecs
+-- Returns: success, importedCount or error message, skippedSpecs, importedSpecId
 function API:Import(importString, overwrite, characterKey)
     characterKey = ToCharacterKey(characterKey);
 
@@ -645,13 +649,13 @@ function API:Import(importString, overwrite, characterKey)
         return false, "KeystoneLoot is not ready yet.", false;
     end
 
-    local success, result, skippedSpecs = Favorites:Import(importString, overwrite and true or false, characterKey);
+    local success, result, skippedSpecs, importedSpecId = Favorites:Import(importString, overwrite and true or false, characterKey);
 
     if (success) then
         RefreshUI();
     end
 
-    return success, result, skippedSpecs;
+    return success, result, skippedSpecs, importedSpecId;
 end
 
 -- callback(event, ...) - owner is the handle to unregister with, defaults to the callback

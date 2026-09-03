@@ -69,7 +69,7 @@ end
 
 local function UpdateContainer(Frame)
     for _, ItemButton in Frame:EnumerateValidItems() do
-        UpdateByContainerSlot(ItemButton, ItemButton:GetBagID(), ItemButton:GetID());
+        UpdateByContainerSlot(ItemButton, ItemButton:GetBagID(), ItemButton:GetID(), nil, "BOTTOMLEFT");
     end
 end
 

@@ -32,7 +32,7 @@ local function GetColoredCharacterLabel(data)
     return classColor:WrapTextInColorCode(data.name);
 end
 
-local function HandleImportResult(success, result, skippedSpecs, overwrite)
+local function HandleImportResult(success, result, skippedSpecs, overwrite, importedSpecId)
     if (skippedSpecs) then
         print(RED_FONT_COLOR:WrapTextInColorCode(L["Some specs were skipped - import string belongs to a different class."]));
     end
@@ -41,6 +41,13 @@ local function HandleImportResult(success, result, skippedSpecs, overwrite)
         if (result > 0) then
             local suffix = overwrite and L[" (overwritten)"] or "";
             print(YELLOW_FONT_COLOR:WrapTextInColorCode(string.format(L["%d |4favorite:favorites; imported%s."], result, suffix)));
+
+            local info = Character:ParseKey(Character:GetSelectedKey());
+            if (info) then
+                DB:Set("filters.classId", info.classId);
+            end
+
+            DB:Set("filters.specId", importedSpecId);
             DB:Set("filters.slotId", -1);
         else
             print(YELLOW_FONT_COLOR:WrapTextInColorCode(L["All items are already in your favorites."]));
@@ -120,13 +127,13 @@ StaticPopupDialogs.KEYSTONELOOT_IMPORT = {
     maxLetters = 0,
     OnAccept = function(self)
         local text = self:GetEditBox():GetText();
-        local success, result, skippedSpecs = Favorites:Import(text, false);
-        HandleImportResult(success, result, skippedSpecs, false);
+        local success, result, skippedSpecs, importedSpecId = Favorites:Import(text, false);
+        HandleImportResult(success, result, skippedSpecs, false, importedSpecId);
     end,
     OnCancel = function(self)
         local text = self:GetEditBox():GetText();
-        local success, result, skippedSpecs = Favorites:Import(text, true);
-        HandleImportResult(success, result, skippedSpecs, true);
+        local success, result, skippedSpecs, importedSpecId = Favorites:Import(text, true);
+        HandleImportResult(success, result, skippedSpecs, true, importedSpecId);
     end,
     OnHide = function(self, data)
         ChatFrameUtil.FocusActiveWindow();

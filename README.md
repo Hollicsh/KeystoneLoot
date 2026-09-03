@@ -261,7 +261,7 @@ An entry looks like this:
 | `:AddFavorite(itemId, specId, tier, options)` | `true` if the item was added. |
 | `:RemoveFavorite(itemId, specId, characterKey)` | `true` if something was removed. |
 | `:SetTier(itemId, specId, tier, characterKey)` | `true` if the tier of an already favorited item was changed. |
-| `:Import(importString, overwrite, characterKey)` | `success, importedCount or error message, skippedSpecs`. |
+| `:Import(importString, overwrite, characterKey)` | `success, importedCount or error message, skippedSpecs, importedSpecId`. `importedSpecId` is the spec the items were imported for, `0` if they belong to several specs, `nil` if nothing was imported. |
 | `:Export(characterKey)` | Import string of that character, or `nil` if there is nothing to export. |
 
 `options` for `:AddFavorite` are all optional: `{ bonusIds = { ... }, gems = { ... }, enchant = 0, characterKey = "..." }`. `tier` defaults to *Must have*.

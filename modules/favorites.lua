@@ -885,6 +885,7 @@ function Favorites:Import(importStr, overwrite, characterKey)
     local skippedSpecs    = false;
     local totalImported   = 0;
     local skippedExisting = 0;
+    local importedSpecId;
 
     -- Import items
     for specId, itemList in pairs(importedItems) do
@@ -906,6 +907,12 @@ function Favorites:Import(importStr, overwrite, characterKey)
 
                         self:Add(sourceId, specId, itemData.itemId, tier, itemData.bonusIds, itemData.gems, itemData.enchant, characterKey);
                         totalImported = totalImported + 1;
+
+                        if (importedSpecId == nil) then
+                            importedSpecId = specId;
+                        elseif (importedSpecId ~= specId) then
+                            importedSpecId = 0;
+                        end
                     else
                         skippedExisting = skippedExisting + 1;
                     end
@@ -919,7 +926,7 @@ function Favorites:Import(importStr, overwrite, characterKey)
     if (totalImported > 0) then
         FireEvent("FAVORITES_IMPORTED", characterKey, totalImported);
 
-        return true, totalImported, skippedSpecs;
+        return true, totalImported, skippedSpecs, importedSpecId;
     end
 
     if (skippedExisting > 0) then
