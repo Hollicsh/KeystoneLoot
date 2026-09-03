@@ -215,6 +215,7 @@ function KeystoneLootSlotDropdownMixin:Init()
     DB:AddObserver("ui.selectedRaidTab", OnChanged);
     DB:AddObserver("filters.specId", OnChanged);
     DB:AddObserver("settings.multiSlotFilter", OnChanged);
+    DB:AddObserver("filters.slotId", function() self:GenerateMenu(); end);
 end
 
 function KeystoneLootSlotDropdownMixin:SlotHasItems(slotId)
