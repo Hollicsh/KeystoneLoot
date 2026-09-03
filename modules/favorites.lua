@@ -341,6 +341,10 @@ function Favorites:GetTiers(itemId)
     return tiers;
 end
 
+function Favorites:GetTierName(tier)
+    return self.TIER_NAME[tier];
+end
+
 function Favorites:GetTierIcon(tier)
     return self.TIER_TEXTURE[tier];
 end
@@ -681,6 +685,27 @@ function Favorites:GetItemSpecs(itemId, useCurrentChar)
     end
 
     return specs;
+end
+
+function Favorites:GetItemSpecTiers(itemId, useCurrentChar)
+    local characterKey = useCurrentChar and Character:GetKey() or Character:GetSelectedKey();
+    local favorites = DB:Get("favorites");
+
+    if (not favorites or not favorites[characterKey]) then
+        return {};
+    end
+
+    local specTiers = {};
+
+    for _, sourceData in pairs(favorites[characterKey]) do
+        for specId, specData in pairs(sourceData) do
+            if (specData[itemId]) then
+                specTiers[specId] = specData[itemId].tier or self.TIER_MUST;
+            end
+        end
+    end
+
+    return specTiers;
 end
 
 function Favorites:GetList(sourceId, specId)
