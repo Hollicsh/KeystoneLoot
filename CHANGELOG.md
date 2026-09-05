@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.15.1 - 2026-09-05
+
+### Bugfixes
+
+- Adjust Baganator favorite icon position to bottom left corner
+- Update slot dropdown text after import
+- Switch to the imported spec after an import
+
+### Improvements
+
+- Show favorite tier per spec in item tooltips
+- Reset all favorites of a character
+- Weapon type submenu for main hand when a spec can use several types
+- Group the settings menu into submenus and add tooltips
+
+### Other Changes
+
+- Update KeystoneLoot.toc
+- Update ruRU.lua
+- Merge pull request [#64](https://github.com/Wolkenschutz/KeystoneLoot/pull/64) by [Hollicsh](https://github.com/Hollicsh) from Hollicsh/main
+- Merge branch 'main' of https://github.com/Wolkenschutz/KeystoneLoot
+
 ## 2.15.0 - 2026-09-02
 
 ### New Features
