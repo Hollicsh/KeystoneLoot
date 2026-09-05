@@ -136,3 +136,6 @@ L["Rescan bonus rolls"] = "Reescanear rolagens bônus";
 L["Checking for past bonus rolls (one time)..."] = "Procurando rolagens bônus anteriores (uma vez)...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "%d |4rolagem bônus anterior detectada:rolagens bônus anteriores detectadas;.";
 L["No untracked bonus rolls found."] = "Nenhuma rolagem bônus não rastreada encontrada.";
+
+-- bindings.lua
+L["Toggle Window"] = "Mostrar/Ocultar janela";

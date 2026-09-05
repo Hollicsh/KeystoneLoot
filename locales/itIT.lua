@@ -136,3 +136,6 @@ L["Rescan bonus rolls"] = "Riscansiona i tiri bonus";
 L["Checking for past bonus rolls (one time)..."] = "Ricerca di tiri bonus passati (una volta)...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "%d |4tiro bonus passato rilevato:tiri bonus passati rilevati;.";
 L["No untracked bonus rolls found."] = "Nessun tiro bonus non tracciato trovato.";
+
+-- bindings.lua
+L["Toggle Window"] = "Finestra";

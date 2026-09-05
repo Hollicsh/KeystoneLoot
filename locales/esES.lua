@@ -136,3 +136,6 @@ L["Rescan bonus rolls"] = "Volver a escanear tiradas bonificadas";
 L["Checking for past bonus rolls (one time)..."] = "Buscando tiradas bonificadas anteriores (una vez)...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "%d |4tirada bonificada anterior detectada:tiradas bonificadas anteriores detectadas;.";
 L["No untracked bonus rolls found."] = "No se encontraron tiradas bonificadas sin registrar.";
+
+-- bindings.lua
+L["Toggle Window"] = "Mostrar/ocultar ventana";

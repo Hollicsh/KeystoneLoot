@@ -140,3 +140,6 @@ L["Rescan bonus rolls"] = "Bonuswürfe scannen";
 L["Checking for past bonus rolls (one time)..."] = "Suche nach vergangenen Bonuswürfen (einmalig)...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "%d |4Bonuswurf:Bonuswürfe; erkannt.";
 L["No untracked bonus rolls found."] = "Alle Bonuswürfe sind bereits erfasst.";
+
+-- bindings.lua
+L["Toggle Window"] = "Fenster ein/aus";

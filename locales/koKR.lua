@@ -137,3 +137,6 @@ L["Rescan bonus rolls"] = "보너스 주사위 다시 검사";
 L["Checking for past bonus rolls (one time)..."] = "지난 보너스 주사위 확인 중 (최초 1회)...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "지난 보너스 주사위 %d개를 감지했습니다.";
 L["No untracked bonus rolls found."] = "추적되지 않은 보너스 주사위가 없습니다.";
+
+-- bindings.lua
+L["Toggle Window"] = "창 열기/닫기";

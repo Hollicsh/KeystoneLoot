@@ -136,3 +136,6 @@ L["Rescan bonus rolls"] = "Rescanner les jets bonus";
 L["Checking for past bonus rolls (one time)..."] = "Recherche d'anciens jets bonus (unique)...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "%d |4ancien jet bonus détecté:anciens jets bonus détectés;.";
 L["No untracked bonus rolls found."] = "Aucun jet bonus non suivi trouvé.";
+
+-- bindings.lua
+L["Toggle Window"] = "Afficher/masquer la fenêtre";

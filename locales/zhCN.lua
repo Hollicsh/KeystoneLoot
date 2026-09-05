@@ -137,3 +137,6 @@ L["Rescan bonus rolls"] = "重新扫描额外拾取";
 L["Checking for past bonus rolls (one time)..."] = "正在检查过去的额外拾取（一次性）...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "检测到 %d 次过去的额外拾取。";
 L["No untracked bonus rolls found."] = "未发现未记录的额外拾取。";
+
+-- bindings.lua
+L["Toggle Window"] = "打开/关闭窗口";

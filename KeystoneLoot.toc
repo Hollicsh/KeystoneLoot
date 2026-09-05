@@ -53,6 +53,9 @@ locales/ruRU.lua
 locales/zhCN.lua
 locales/zhTW.lua
 
+# Keybindings
+bindings.lua
+
 # Data (generated)
 data/items.lua
 data/dungeons.lua

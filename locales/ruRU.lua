@@ -138,3 +138,6 @@ L["Rescan bonus rolls"] = "Сканировать бонусные броски 
 L["Checking for past bonus rolls (one time)..."] = "Поиск прошлых бонусных бросков (однократно)...";
 L["%d past |4bonus roll:bonus rolls; detected."] = "Обнаружено прошлых бонусных бросков: %d.";
 L["No untracked bonus rolls found."] = "Неотслеженных бонусных бросков не найдено.";
+
+-- bindings.lua
+L["Toggle Window"] = "Показать/скрыть окно";
